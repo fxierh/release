@@ -629,7 +629,7 @@ tests:
     - ref: openshift-extended-test-longduration
     workflow: cucushift-installer-rehearse-aws-ipi
 - as: aws-ipi-f28-longduration-hive-sd-rosa
-  cron: 39 12 4 * *
+  cron: 39 12 5 * *
   steps:
     cluster_profile: aws-qe
     env:
