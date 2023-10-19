@@ -2978,9 +2978,18 @@ tests:
     cluster_profile: ibmcloud-qe
     env:
       E2E_RUN_TAGS: '@amd64 and @ibmcloud-ipi and @network-ovnkubernetes and not @fips'
-      FEATURE_SET: TechPreviewNoUpgrade
+      # FEATURE_SET: TechPreviewNoUpgrade
       TAG_VERSION: '@4.15'
     test:
+    - as: sleep
+      commands: sleep 64800
+      from: tools
+      resources:
+        limits:
+          memory: 8Gi
+        requests:
+          cpu: "1"
+          memory: 4Gi
     - chain: openshift-e2e-test-qe
     workflow: cucushift-installer-rehearse-ibmcloud-ipi
 - as: ibmcloud-ipi-tp-f28-destructive
