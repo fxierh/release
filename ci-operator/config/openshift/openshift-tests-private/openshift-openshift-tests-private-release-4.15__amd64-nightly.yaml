@@ -3681,7 +3681,7 @@ tests:
 - as: vsphere-ipi-f28-long-duration-hive
   cron: 23 3 14,29 * *
   steps:
-    cluster_profile: vsphere
+    cluster_profile: vsphere-2
     env:
       TEST_SCENARIOS: Cluster_Operator
       TEST_TIMEOUT: "90"
@@ -3714,7 +3714,7 @@ tests:
 - as: vsphere-ipi-f28-long-duration-hive-2
   cron: 23 3 14,29 * *
   steps:
-    cluster_profile: vsphere
+    cluster_profile: vsphere-2
     env:
       TEST_SCENARIOS: Cluster_Operator
       TEST_TIMEOUT: "90"
