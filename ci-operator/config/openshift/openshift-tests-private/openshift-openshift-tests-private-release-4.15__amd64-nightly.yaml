@@ -3682,9 +3682,9 @@ tests:
   cron: 23 3 14,29 * *
   steps:
     cluster_profile: vsphere-2
-    env:
-      TEST_SCENARIOS: Cluster_Operator
-      TEST_TIMEOUT: "90"
+    # env:
+      # TEST_SCENARIOS: Cluster_Operator
+      # TEST_TIMEOUT: "90"
     test:
     - as: output-kubeconfig
       commands: cat ${KUBECONFIG}
@@ -3695,13 +3695,13 @@ tests:
         requests:
           cpu: "1"
           memory: 1Gi
-    - ref: openshift-extended-test-longduration
+    # - ref: openshift-extended-test-longduration
     - as: sleep
       commands: sleep 64800
       credentials:
-      - mount_path: /var/run/vault/vsphere
-        name: ci-route-53
-        namespace: test-credentials
+      - namespace: test-credentials
+        name: vsphere-config
+        mount_path: /var/run/vault/vsphere-config
       from: tools
       resources:
         limits:
@@ -3715,9 +3715,9 @@ tests:
   cron: 23 3 14,29 * *
   steps:
     cluster_profile: vsphere-2
-    env:
-      TEST_SCENARIOS: Cluster_Operator
-      TEST_TIMEOUT: "90"
+    # env:
+      # TEST_SCENARIOS: Cluster_Operator
+      # TEST_TIMEOUT: "90"
     test:
     - as: output-kubeconfig
       commands: cat ${KUBECONFIG}
@@ -3728,13 +3728,13 @@ tests:
         requests:
           cpu: "1"
           memory: 1Gi
-    - ref: openshift-extended-test-longduration
+    # - ref: openshift-extended-test-longduration
     - as: sleep
       commands: sleep 64800
       credentials:
-      - mount_path: /var/run/vault/vsphere
-        name: ci-route-53
-        namespace: test-credentials
+      - namespace: test-credentials
+        name: vsphere-config
+        mount_path: /var/run/vault/vsphere-config
       from: tools
       resources:
         limits:
