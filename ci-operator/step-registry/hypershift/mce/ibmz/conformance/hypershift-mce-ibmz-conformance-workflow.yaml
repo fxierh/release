@@ -43,5 +43,4 @@ workflow:
         build can reference a cluster service with a build being created from new-build should be able to run a build that references a cluster service\|
         oc tag should change image reference for internal images\|
         Services should be able to switch session affinity for NodePort service\|
-        Services should have session affinity work for NodePort service\|
-        Aggregator Should be able to support the 1.17 Sample API Server using the current Aggregator
+        Services should have session affinity work for NodePort service
